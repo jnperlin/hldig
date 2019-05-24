@@ -320,7 +320,6 @@ int
 Connection::Assign_Server (const String & name)
 {
   struct hostent *hp;
-  char **alias_list;
   unsigned int addr;
 
   //
@@ -335,7 +334,6 @@ Connection::Assign_Server (const String & name)
     if (hp == 0)
       return NOTOK;
 
-    alias_list = hp->h_aliases;
     memcpy ((char *) &server.sin_addr, (char *) hp->h_addr, hp->h_length);
   }
   else
@@ -442,7 +440,11 @@ Connection::Connect ()
 int
 Connection::Bind ()
 {
-  if (bind (sock, (struct sockaddr *) &server, sizeof (server)) == NOTOK)
+  // An unqualified call to bind() ends up in std::bind here. (Some compilers
+  // have a proper specialisation to avoid this, but that's still a dubious
+  // solution...) We want bind() from the global namespace, so we better say
+  // that here:
+  if (::bind (sock, (struct sockaddr *) &server, sizeof (server)) == NOTOK)
   {
     return NOTOK;
   }
