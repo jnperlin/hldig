@@ -9,7 +9,7 @@ include $(top_srcdir)/Makefile.config
 AM_LFLAGS = -L
 AM_YFLAGS = -l -d
 
-EXTRA_DIST=conf_lexer.cxx conf_parser.cxx
+BUILT_SOURCES = conf_lexer.cxx conf_parser.cxx conf_parser.hxx
 
 pkglib_LTLIBRARIES = libcommon.la
 
@@ -45,7 +45,7 @@ noinst_HEADERS = DocumentDB.h \
 	defaults.h \
 	HtConfiguration.h \
 	HtURLRewriter.h \
-	conf_parser.h 	\
+	conf_parser.hxx 	\
 	messages.h
 
 LOCAL_DEFINES=	-DBIN_DIR=\"$(bindir)\" \

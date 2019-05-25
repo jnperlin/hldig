@@ -559,7 +559,7 @@ char *yytext;
 
 #include "HtConfiguration.h"
 //#include "Dictionary.h"
-#include "conf_parser.h"
+#include "conf_parser.hxx"
 #define MAX_INCLUDE_DEPTH 10
 YY_BUFFER_STATE include_stack[MAX_INCLUDE_DEPTH];
 String *name_stack[MAX_INCLUDE_DEPTH];

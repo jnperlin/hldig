@@ -132,8 +132,8 @@ int sn_debug=3;
 
 /* In a future release of Bison, this section will be replaced
    by #include "y.tab.h".  */
-#ifndef YY_YY__HLDIG_HLCOMMON_CONF_PARSER_HXX_INCLUDED
-# define YY_YY__HLDIG_HLCOMMON_CONF_PARSER_HXX_INCLUDED
+#ifndef YY_YY_CONF_PARSER_HXX_INCLUDED
+# define YY_YY_CONF_PARSER_HXX_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -193,7 +193,7 @@ extern YYSTYPE yylval;
 
 int yyparse (HtConfiguration *aConf);
 
-#endif /* !YY_YY__HLDIG_HLCOMMON_CONF_PARSER_HXX_INCLUDED  */
+#endif /* !YY_YY_CONF_PARSER_HXX_INCLUDED  */
 
 /* Copy the second part of user declarations.  */
 

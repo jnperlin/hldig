@@ -74,3 +74,13 @@ distdir = $(PACKAGE)-$(VERSION)
 # have a shortcut to create tarball from the local git repo
 release:
 	git archive --format=tar.gz -o $(PACKAGE)-$(VERSION).tar.gz --prefix=$(PACKAGE)-$(VERSION)/ HEAD
+
+# 'make uninstall' leaves some files in the config dir intentionally;
+# they may contain adoptions & chages the admin made, and are probably
+# worth keeping.
+#
+# But we must hide them from 'make distcheck' or it would fail. Please make
+# sure the patterns match the files omitted in "installdir/Makefile.am" !
+distuninstallcheck_listfiles = \
+find . -type f -print        | \
+grep -v '/etc/hldig/\(cookies.txt\|mime.types\|HtFileType-magic.mime\|hldig.conf\)$$'

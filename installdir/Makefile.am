@@ -64,6 +64,7 @@ uninstall-local:
 	rm -f $(DESTDIR)$(bindir)/HtFileType
 	rm -f $(DESTDIR)$(bindir)/rundig
 	rm -f $(DESTDIR)$(SEARCH_DIR)/$(SEARCH_FORM)
+# some precious stuff we want to keep:
 #	rm -f $(DESTDIR)$(CONFIG_DIR)/hldig.conf
 #	rm -f $(DESTDIR)$(CONFIG_DIR)/mime.types
 #	rm -f $(DESTDIR)$(CONFIG_DIR)/HtFileType-magic.mime
@@ -81,3 +82,4 @@ uninstall-local:
 	@for i in $(COMMONCSS); do \
 		rm -f $(DESTDIR)$(IMAGE_DIR)/$$i; echo $(DESTDIR)$(IMAGE_DIR)/$$i; \
 	done && test -z "$$fail"
+

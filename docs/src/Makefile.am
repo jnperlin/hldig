@@ -1,4 +1,4 @@
-AUTOMAKE_OPTIONS = subdir-objects foreign no-dependencies
+AUTOMAKE_OPTIONS = subdir-objects foreign # no-dependencies
 
 bin_PROGRAMS=simplecgen
 AM_CFLAGS=	-Wall -std=c99 -g

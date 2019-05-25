@@ -87,7 +87,7 @@ url_LDADD = $(HLLIBS)
 clean-local:
 	rm -fr gmon.out test test_weakcmpr __db*
 	rm -f  tmpfile t_htdb.d? monitor.out
-	cd conf; $(MAKE) clean
+	-cd conf && $(MAKE) clean
 
 distclean-local:
 	rm -fr words.all words.uniq

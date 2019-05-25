@@ -1,6 +1,6 @@
 AM_CPPFLAGS = -I$(top_srcdir)/../hllib
 
-AUTOMAKE_OPTIONS = foreign no-dependencies
+AUTOMAKE_OPTIONS = foreign # no-dependencies
 
 EXTRA_DIST = db_config.h.in db.h.in \
 	68K.gcc alpha.gcc sparc.gcc x86.gcc \
